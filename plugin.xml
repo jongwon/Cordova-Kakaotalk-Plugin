@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-   id="cordova-plugin-htj-kakaotalk"
-   name="cordova-plugin-htj-kakaotalk"
+   id="cordova-plugin-ghyeok-kakaotalk"
+   name="cordova-plugin-ghyeok-kakaotalk"
    version="1.0.0">
 
     <name>KakaoTalk</name>
@@ -19,7 +19,7 @@
 	<platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="KakaoTalk">
-                <param name="android-package" value="com.htj.plugin.kakao.KakaoTalk" />
+                <param name="android-package" value="com.ghyeok.plugin.kakao.KakaoTalk" />
             </feature>
             <access origin="https://*.kakao.com" />
             <access origin="https://*.kakao.co.kr" />
@@ -51,7 +51,7 @@
         </config-file>
 
         <framework src="src/android/kakao.gradle" custom="true" type="gradleReference" />
-		<source-file src="src/android/KakaoTalk.java" target-dir="src/com/htj/plugin/kakao" />
+		<source-file src="src/android/KakaoTalk.java" target-dir="src/com/ghyeok/plugin/kakao" />
     </platform>
     
     <platform name="ios">
