@@ -1,7 +1,7 @@
 {
   "id": "cordova-plugin-ghyeok-kakaotalk",
   "name": "cordova-plugin-ghyeok-kakaotalk",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Cordova KakaoTalk Plugin",
   "cordova": {
     "id": "cordova-plugin-ghyeok-kakaotalk",
