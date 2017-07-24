@@ -195,10 +195,10 @@ public class KakaoTalk extends CordovaPlugin {
 	 */
 	private void login()
 	{
-		cordova.getThreadPool().execute(new Runnable() {
+		cordova.getActivity().runOnUiThread(new Runnable() {
 			@Override
 			public void run() {
-				Session.getCurrentSession().open(AuthType.KAKAO_TALK, currentActivity);
+				Session.getCurrentSession().open(AuthType.KAKAO_TALK, cordova.getActivity());
 			}
 		});
 	}
