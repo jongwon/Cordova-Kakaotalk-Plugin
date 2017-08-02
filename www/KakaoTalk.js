@@ -7,6 +7,11 @@ var KakaoTalk = {
 	logout: function (successCallback, errorCallback) {
 		exec(successCallback, errorCallback, 'KakaoTalk', 'logout', []);
 	},
+
+	getAccessToken: function (successCallback, errorCallback) {
+		exec(successCallback, errorCallback, 'KakaoTalk', 'getAccessToken', []);
+	},
+
 	share : function(options, successCallback, errorCallback) {
 
 		for(var options_key in options){
