@@ -59,6 +59,12 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
+- (void)getAccessToken: (CDVInvokedUrlCommand*)command
+{
+    CDVPluginResult* pluginResult = pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:[KOSession sharedSession].accessToken];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
 - (void)share:(CDVInvokedUrlCommand *)command
 {
         NSMutableArray *kakaoArray = [NSMutableArray array];

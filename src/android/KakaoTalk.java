@@ -222,6 +222,14 @@ public class KakaoTalk extends CordovaPlugin {
     }
 
     /**
+     * 액세스 토큰을 가져온다
+     */
+    private void getAccessToken(CallbackContext callbackContext) {
+        String accessToken = Session.getCurrentSession().getTokenInfo().getAccessToken();
+        callbackContext.success(accessToken);
+    }
+
+    /**
      * On activity result
      *
      * @param requestCode
