@@ -326,7 +326,7 @@ public class KakaoTalk extends CordovaPlugin {
             return new ISessionConfig() {
                 @Override
                 public AuthType[] getAuthTypes() {
-                    return new AuthType[]{AuthType.KAKAO_TALK};
+                    return new AuthType[]{AuthType.KAKAO_LOGIN_ALL};
                 }
 
                 @Override
@@ -340,6 +340,11 @@ public class KakaoTalk extends CordovaPlugin {
                 }
 
                 @Override
+                public boolean isSecureMode() {
+                    return false;
+                }
+
+                @Override
                 public boolean isSaveFormData() {
                     return true;
                 }
@@ -349,11 +354,6 @@ public class KakaoTalk extends CordovaPlugin {
         @Override
         public IApplicationConfig getApplicationConfig() {
             return new IApplicationConfig() {
-                @Override
-                public Activity getTopActivity() {
-                    return KakaoTalk.getCurrentActivity();
-                }
-
                 @Override
                 public Context getApplicationContext() {
                     return KakaoTalk.getCurrentActivity().getApplicationContext();
