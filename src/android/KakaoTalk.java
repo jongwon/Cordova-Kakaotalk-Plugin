@@ -75,6 +75,9 @@ public class KakaoTalk extends CordovaPlugin {
         } else if (action.equals("logout")) {
             this.logout(callbackContext);
             return true;
+	} else if (action.equals("getAccessToken")) {
+	    this.getAccessToken(callbackContext);
+	    return true;
         } else if (action.equals("share")) {
 
             try {
