@@ -1,27 +1,33 @@
 Cordova Plugin KakaoTalk
 ========================
 
-This plugin is modified by combining the two other plguins
+### ionic2 에서 사용할 수 있습니다.
 
-- https://github.com/lihak/KakaoTalkCordovaPlugin
+이 Cordova 플러그인은 taejaehan의 Cordova-Kakaotalk-Plugin를 수정하였습니다.
 
-- https://github.com/gnustory/cordova_plugin-KakaoLinkPlugin
+ - https://github.com/taejaehan/Cordova-Kakaotalk-Plugin
 
-Make sure you've registered your Kakao app with Kakao and have an KAKAO_APP_KEY
+해당 플러그인을 사용하기에 앞서 카카오 개발자 홈페이지에서 카카오 앱을 등록하여 KAKAO_APP_KEY를 발급 받아야합니다.
 
-- https://developers.kakao.com
+- [https://developers.kakao.com](https://developers.kakao.com)
 
-Cordova Install Note:
+설치 방법
 ========================
 
-cordova plugin add https://github.com/taejaehan/cordova-kakaotalk.git --variable KAKAO_APP_KEY=YOUR_KAKAO_APP_KEY
+## Cordova Plugin 설치
 
-[Android]
-* nothing to do ;-)
-* But the Android app must register key hash(https://developers.kakao.com/docs/android#getting-started-launch-sample-app)
+플러그인 추가
+```
+cordova plugin add cordova-plugin-ghyeok-kakaotalk --variable KAKAO_APP_KEY=YOUR_KAKAO_APP_KEY
+```
 
-[iOS]
-* Add following code to appDelegate
+안드로이드
+
+* 카카오 개발자 센터에서 키 해시를 등록해야 합니다 (https://developers.kakao.com/docs/android#getting-started-launch-sample-app)
+
+아이폰
+
+* 아래의 코드를 appDelegate에 추가 해야합니다.
 
 ```
 #import <KakaoOpenSDK/KakaoOpenSDK.h>
@@ -37,10 +43,30 @@ cordova plugin add https://github.com/taejaehan/cordova-kakaotalk.git --variable
 - (void)applicationDidBecomeActive:(UIApplication *)application{[KOSession handleDidBecomeActive];}
 ```
 
-* Ohter Linker Flags 
+* Ohter Linker Flags 추가
 
 open platforms/ios/*.xcodeproj
         Build Settings > Linking > Other Linker Flags > add '-all_load'
+
+
+## Ionic Plugin 설치
+Ionic에서 사용하기 위해서는 Cordova 플러그인을 앞서 설치해야합니다.
+
+Ionic 카카오톡 플러그인 설치
+
+```
+npm install --save ionic-plugin-kakaotalk
+```
+
+app.module.ts Provider 추가
+
+```
+  providers: [
+    ...
+    KakaoTalk,
+    ...
+  ]
+```
 
 How to use the plugin
 ========================
