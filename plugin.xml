@@ -8,7 +8,8 @@
     <description>KakaoTalk Cordova Plugin</description>
 
 	<engines>
-		<engine name="cordova-android" version=">3.9.9" /><!-- Requires Gradle building -->
+		<engine name="cordova-android" version=">=3.5.0" /><!-- Requires Gradle building -->
+		<engine name="cordova-ios" version=">=3.5.0" />
 	</engines>
 
     <js-module name="KakaoTalk" src="www/KakaoTalk.js">
@@ -16,7 +17,9 @@
     </js-module>
 
 	<preference name="KAKAO_APP_KEY" />
+	
 	<platform name="android">
+		
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="KakaoTalk">
                 <param name="android-package" value="com.ghyeok.plugin.kakao.KakaoTalk" />
@@ -51,10 +54,13 @@
         </config-file>
 
         <framework src="src/android/kakao.gradle" custom="true" type="gradleReference" />
+		
 		<source-file src="src/android/KakaoTalk.java" target-dir="src/com/ghyeok/plugin/kakao" />
+		
     </platform>
 
     <platform name="ios">
+		
         <config-file target="config.xml" parent="/*">
             <feature name="KakaoTalk">
                 <param name="ios-package" value="KakaoTalk" />
